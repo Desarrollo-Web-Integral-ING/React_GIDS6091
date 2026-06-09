@@ -1,0 +1,22 @@
+name: My First Pull Request
+
+on:
+  pull_request:
+
+jobs:
+  Tarea1:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Datos del Pull Request
+        run: |
+          echo "Autor: ${{ github.event.pull_request.user.login }}"
+          echo "ID: ${{ github.event.pull_request.id }}"
+          echo "URL: ${{ github.event.pull_request.html_url }}"
+          echo "Repositorio: ${{ github.repository }}"
+          echo "Rama origen: ${{ github.event.pull_request.head.ref }}"
+          echo "Rama destino: ${{ github.event.pull_request.base.ref }}"
+          echo "Titulo: ${{ github.event.pull_request.title }}"
+          echo "Contenido: ${{ github.event.pull_request.body }}"
+          echo "Estado: ${{ github.event.pull_request.state }}"
+          echo "Fusionado: ${{ github.event.pull_request.merged }}"
